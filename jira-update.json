@@ -1,0 +1,91 @@
+{
+    "cardsV2": [
+        {
+            "cardId": "jira-issue-update-notification",
+            "card": {
+                "header": {
+                    "title": "Issue Update Notification",
+                    "subtitle": "",
+                    "imageUrl": "https://wac-cdn.atlassian.com/dam/jcr:ba281f67-5671-41c2-6b3b-e574d1dcd295/Jira-blue-icon.svg?cdnVersion=1341",
+                    "imageType": "SQUARE"
+                },
+                "sections": [
+                    {
+                        "header": "Issue Details",
+                        "widgets": [
+                            {
+                                "textParagraph": {
+                                    "text": "<b>{{ $json['issue-title'] }}</b>"
+                                }
+                            },
+                            {
+                                "decoratedText": {
+                                    "topLabel": "Issue Key",
+                                    "text": "{{ $json['issue-key'] }}"
+                                }
+                            },
+                            {
+                                "decoratedText": {
+                                    "topLabel": "Status",
+                                    "text": "{{ $json['issue-status'] }}"
+                                }
+                            },
+                            {
+                                "decoratedText": {
+                                    "topLabel": "Type",
+                                    "text": "{{ $json['issue-type'] }}"
+                                }
+                            },
+                            {
+                                "decoratedText": {
+                                    "topLabel": "Priority",
+                                    "text": "{{ $json['issue-priority'] }}"
+                                }
+                            },
+                            {
+                                "decoratedText": {
+                                    "topLabel": "Assignee",
+                                    "text": "{{ $json['assigned-to'] }}"
+                                }
+                            },
+                            {
+                                "decoratedText": {
+                                    "topLabel": "Reporter",
+                                    "text": "{{ $json['retorted-from'] }}"
+                                }
+                            },
+                            {
+                                "decoratedText": {
+                                    "topLabel": "Updated Field",
+                                    "text": "{{ $json['field'] }}"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "buttonList": {
+                                    "buttons": [
+                                        {
+                                            "text": "View Issue in Jira",
+                                            "onClick": {
+                                                "openLink": {
+                                                    "url": "https://domain.atlassian.net/browse/{{ $json['issue-key'] }}"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "peekCardHeader": {
+                    "title": "Jira Issue Updated",
+                    "subtitle": "{{ $json['issue-key'] }}"
+                }
+            }
+        }
+    ]
+}
