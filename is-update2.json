@@ -1,0 +1,82 @@
+{
+    "cardsV2": [
+        {
+            "cardId": "jira-issue-card",
+            "card": {
+                "header": {
+                    "title": "Jira Issue Updated",
+                    "subtitle": "{{ $('Edit Field Names1').item.json['issue-title'] }}"
+                },
+                "sections": [
+                    {
+                        "header": "Issue Details",
+                        "widgets": [
+                            {
+                                "decoratedText": {
+                                    "topLabel": "Type",
+                                    "text": "{{ $('Edit Field Names1').item.json['issue-type'] }}",
+                                    "startIcon": {
+                                        "iconUrl": "{{ $json['issue-type-icon'] }}"
+                                    }
+                                }
+                            },
+                            {
+                                "decoratedText": {
+                                    "topLabel": "Status",
+                                    "text": "{{ $json['status-color'] }}",
+                                    "startIcon": {
+                                        "knownIcon": "TICKET"
+                                    }
+                                }
+                            },
+                            {
+                                "decoratedText": {
+                                    "topLabel": "Reporter",
+                                    "text": "{{ $('Edit Field Names1').item.json['retorted-from'] }}",
+                                    "startIcon": {
+                                        "knownIcon": "PERSON"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "header": "Description",
+                        "widgets": [
+                            {
+                                "decoratedText": {
+                                    "text": "{{ $('Edit Field Names1').item.json['changed-to-value'].replace(/\n/g, ' ').substring(0, 50) }}...",
+                                    "startIcon": {
+                                        "knownIcon": "DESCRIPTION"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "buttonList": {
+                                    "buttons": [
+                                        {
+                                            "text": "View in Jira",
+                                            "onClick": {
+                                                "openLink": {
+                                                    "url": "{{ $('Edit Field Names1').item.json['issue-key'] }}"
+                                                }
+                                            },
+                                            "icon": {
+                                                "knownIcon": "OPEN_IN_NEW"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
+// With devided desc 
